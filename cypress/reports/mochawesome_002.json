@@ -1,0 +1,206 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-08-03T12:58:21.660Z",
+    "end": "2022-08-03T12:58:25.324Z",
+    "duration": 3664,
+    "testsRegistered": 6,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 5,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "43540de4-9529-4838-8324-fa9776624a89",
+      "title": "",
+      "fullFile": "cypress/integration/03.ExpensesForm_spec.js",
+      "file": "cypress/integration/03.ExpensesForm_spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "91714e7b-3978-4bb2-911e-70f68ca5cc52",
+          "title": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características:",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Um campo para adicionar o valor da despesa",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para adicionar o valor da despesa",
+              "timedOut": null,
+              "duration": 1833,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.VALUE_INPUT_TEST_ID).should('exist');",
+              "err": {
+                "message": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > emailId is not a function\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `3 - Desenvolva um formulári...`",
+                "estack": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > emailId is not a function\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `3 - Desenvolva um formulári...`\n    at Login.handleChance (http://localhost:3000/static/js/main.chunk.js:242:7)\n    at onClick (http://localhost:3000/static/js/main.chunk.js:290:30)\n    at HTMLUnknownElement.callCallback (http://localhost:3000/static/js/0.chunk.js:6269:18)\n    at Object.invokeGuardedCallbackDev (http://localhost:3000/static/js/0.chunk.js:6318:20)\n    at invokeGuardedCallback (http://localhost:3000/static/js/0.chunk.js:6371:35)\n    at invokeGuardedCallbackAndCatchFirstError (http://localhost:3000/static/js/0.chunk.js:6386:29)\n    at executeDispatch (http://localhost:3000/static/js/0.chunk.js:6471:7)\n    at executeDispatchesInOrder (http://localhost:3000/static/js/0.chunk.js:6496:9)\n    at executeDispatchesAndRelease (http://localhost:3000/static/js/0.chunk.js:9380:9)\n    at executeDispatchesAndReleaseTopLevel (http://localhost:3000/static/js/0.chunk.js:9389:14)\n    at forEachAccumulated (http://localhost:3000/static/js/0.chunk.js:9361:12)\n    at runEventsInBatch (http://localhost:3000/static/js/0.chunk.js:9406:7)\n    at runExtractedPluginEventsInBatch (http://localhost:3000/static/js/0.chunk.js:9616:7)\n    at handleTopLevel (http://localhost:3000/static/js/0.chunk.js:9660:9)\n    at batchedEventUpdates$1 (http://localhost:3000/static/js/0.chunk.js:27806:16)\n    at batchedEventUpdates (http://localhost:3000/static/js/0.chunk.js:6878:16)\n    at dispatchEventForLegacyPluginEventSystem (http://localhost:3000/static/js/0.chunk.js:9670:9)\n    at attemptToDispatchEvent (http://localhost:3000/static/js/0.chunk.js:10390:9)\n    at dispatchEvent (http://localhost:3000/static/js/0.chunk.js:10311:23)\n    at unstable_runWithPriority (http://localhost:3000/static/js/0.chunk.js:41791:16)\n    at runWithPriority$1 (http://localhost:3000/static/js/0.chunk.js:17156:14)\n    at discreteUpdates$1 (http://localhost:3000/static/js/0.chunk.js:27823:16)\n    at discreteUpdates (http://localhost:3000/static/js/0.chunk.js:6891:16)\n    at dispatchDiscreteEvent (http://localhost:3000/static/js/0.chunk.js:10290:7)",
+                "diff": null
+              },
+              "uuid": "2ff368d3-de50-4e1b-a143-6313c0c8538f",
+              "parentUUID": "91714e7b-3978-4bb2-911e-70f68ca5cc52",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Um campo para adicionar a descrição da despesa",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para adicionar a descrição da despesa",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.DESCRIPTION_INPUT_TEST_ID).should('exist');",
+              "err": {},
+              "uuid": "8fdcd3fc-7bb8-4b66-afb5-cecf3035d20e",
+              "parentUUID": "91714e7b-3978-4bb2-911e-70f68ca5cc52",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Um campo para selecionar em qual moeda será registrada a despesa",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para selecionar em qual moeda será registrada a despesa",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.CURRENCY_INPUT_TEST_ID).find('option').should('have.length', _constants.currenciesOptions.length);\ncy.wrap(_constants.currenciesOptions).each(currency => {\n  cy.getByTestId(_constants.CURRENCY_INPUT_TEST_ID).contains('option', currency).should('exist');\n});",
+              "err": {},
+              "uuid": "d4e38e13-555a-48c1-98f4-fd84f88b0333",
+              "parentUUID": "91714e7b-3978-4bb2-911e-70f68ca5cc52",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "A chave currencies no estado global deve ser um array de siglas puxadas através de uma requisição à API",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: A chave currencies no estado global deve ser um array de siglas puxadas através de uma requisição à API",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('@mockFetch').should('be.calledWith', 'https://economia.awesomeapi.com.br/json/all');\ncy.window().its('store').invoke('getState').its('wallet.currencies').should('deep.equal', _constants.currenciesOptions);",
+              "err": {},
+              "uuid": "7729e124-8cc3-4950-860a-cd7fb5ef0043",
+              "parentUUID": "91714e7b-3978-4bb2-911e-70f68ca5cc52",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Um campo para selecionar qual método de pagamento será utilizado",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para selecionar qual método de pagamento será utilizado",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.METHOD_INPUT_TEST_ID).find('option').should('have.length', _constants.methodOptions.length);\ncy.wrap(_constants.methodOptions).each(method => {\n  cy.getByTestId(_constants.METHOD_INPUT_TEST_ID).contains('option', method).should('exist');\n});",
+              "err": {},
+              "uuid": "dac472a6-a4f0-44e9-a58d-56ed2107cc4c",
+              "parentUUID": "91714e7b-3978-4bb2-911e-70f68ca5cc52",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Um campo para selecionar uma categoria (tag) para a despesa.",
+              "fullTitle": "3 - Desenvolva um formulário para adicionar uma despesa contendo as seguintes características: Um campo para selecionar uma categoria (tag) para a despesa.",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.getByTestId(_constants.TAG_INPUT_TEST_ID).find('option').should('have.length', _constants.tagOptions.length);\ncy.wrap(_constants.tagOptions).each(tag => {\n  cy.getByTestId(_constants.TAG_INPUT_TEST_ID).contains('option', tag).should('exist');\n});",
+              "err": {},
+              "uuid": "bbe87f5d-1b49-4671-b344-2088ca24b82b",
+              "parentUUID": "91714e7b-3978-4bb2-911e-70f68ca5cc52",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "2ff368d3-de50-4e1b-a143-6313c0c8538f"
+          ],
+          "pending": [],
+          "skipped": [
+            "8fdcd3fc-7bb8-4b66-afb5-cecf3035d20e",
+            "d4e38e13-555a-48c1-98f4-fd84f88b0333",
+            "7729e124-8cc3-4950-860a-cd7fb5ef0043",
+            "dac472a6-a4f0-44e9-a58d-56ed2107cc4c",
+            "bbe87f5d-1b49-4671-b344-2088ca24b82b"
+          ],
+          "duration": 1833,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
