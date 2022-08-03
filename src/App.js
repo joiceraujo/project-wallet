@@ -4,13 +4,15 @@ import Login from './pages/Login';
 import Wallet from './pages/Wallet';
 
 function App() {
-  return <div>
-    <Switch>
-      <Route path="/"component={ Login } exact />
-      <Route path="/carteira" component={ Wallet } />
-    </Switch>
-    Hello, TrybeWallet!
-    </div>;
+  return (
+    <div>
+      <Switch>
+        <Route path="/" component={ Login } exact />
+        <Route path="/carteira" component={ Wallet } />
+      </Switch>
+      Hello, TrybeWallet!
+    </div>
+  );
 }
 
 export default App;

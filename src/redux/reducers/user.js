@@ -1,19 +1,19 @@
 import { EMAIL_ADD } from '../actions';
 
 const INITIAL_STATE = {
-    email: '',
+  email: '',
 };
 
 const user = (state = INITIAL_STATE, action) => {
-    switch (action.type) {
-        case EMAIL_ADD:
-            return {
-                ...state,
-                email: action.payload,
-            };
-        default:
-            return state;
-    }
+  switch (action.type) {
+  case EMAIL_ADD:
+    return {
+      ...state,
+      email: action.payload,
+    };
+  default:
+    return state;
+  }
 };
 
 export default user;
