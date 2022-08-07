@@ -8,7 +8,6 @@ import * as serviceWorker from './serviceWorker';
 import store from './redux/store';
 
 ReactDOM.render(
-  <BrowserRouter>
     <Provider store={ store }>
       <App />
     </Provider>

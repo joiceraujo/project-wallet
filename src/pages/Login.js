@@ -70,10 +70,6 @@ class Login extends React.Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  emailId: (payload) => dispatch(emailAdd(payload)),
-});
-
 Login.propTypes = {
   emailId: PropTypes.func.isRequired,
   history: PropTypes.objectOf(PropTypes.any).isRequired,

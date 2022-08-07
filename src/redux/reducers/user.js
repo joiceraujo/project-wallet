@@ -1,5 +1,3 @@
-import { EMAIL_ADD } from '../actions';
-
 const INITIAL_STATE = {
   email: '',
 };

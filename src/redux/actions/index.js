@@ -1,6 +1,3 @@
-export const EMAIL_ADD = 'EMAIL_ADD';
-export const ALLCURRENCIES = 'ALLCURRENCIES';
-
 export const emailAdd = (payload) => ({
   type: EMAIL_ADD,
   payload,

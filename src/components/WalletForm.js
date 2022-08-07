@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { walletAdd } from '../redux/actions/index';
 
-class WalletForm extends Component {
   componentDidMount = () => {
     const { getCurrencie } = this.props;
     getCurrencie();
@@ -45,10 +44,9 @@ class WalletForm extends Component {
             <option value="Transporte">Transporte</option>
             <option value="Saude">Saúde</option>
           </select>
-        </form>
-      </div>
-    );
-  }
+      </form>
+    </div>
+  );
 }
 
 const mapStateToProps = (state) => ({
