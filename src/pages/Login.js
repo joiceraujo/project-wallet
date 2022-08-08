@@ -1,19 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { emailAdd } from '../redux/actions';
+import { emailAdd } from '../redux/actions/index';
 
 class Login extends React.Component {
     state = {
       email: '',
       password: '',
+      disable: true,
     }
+
+    onChangeInput = ({ target }) => {
+      const { name, value } = target;
+
+      this.setState({
+        [name]: value,
+      }, () => { this.validateEmail(); });
+    };
 
  validateEmail = () => {
    const { email, password } = this.state;
-   const number = 5;
+   const number = 6;
    const example = /\S+@\S+\.\S+/;
-   return !(example.test(email) && password.length > number);
+   if (password.length >= number && example.test(email)) {
+     this.setState({
+       disable: false,
+     }, () => {});
+   } else {
+     this.setState({
+       disable: true,
+     });
+   }
  }
 
   onClick = (event) => {
@@ -25,7 +42,7 @@ class Login extends React.Component {
   }
 
   render() {
-    const { email, password } = this.state;
+    const { email, password, disable } = this.state;
     return (
       <div>
         Login
@@ -34,33 +51,27 @@ class Login extends React.Component {
             Email:
             <input
               type="email"
+              name="email"
               placeholder="Digite seu email"
               data-testid="email-input"
-              onChange={
-                (event) => this.setState({
-                  email: event.target.value,
-                })
-              }
               value={ email }
+              onChange={ this.onChangeInput }
             />
           </label>
           <label htmlFor="passwordInput">
             <input
               type="password"
+              name="password"
               placeholder="Digite sua senha"
               data-testid="password-input"
-              onChange={
-                (event) => this.setState({
-                  password: event.target.value,
-                })
-              }
               value={ password }
+              onChange={ this.onChangeInput }
             />
           </label>
           <button
-            type="submit"
-            disabled={ this.validateEmail() }
-            onClick={ (event) => this.onClick(event) }
+            type="button"
+            disabled={ disable }
+            onClick={ this.onClick }
           >
             Entrar
           </button>
@@ -70,9 +81,15 @@ class Login extends React.Component {
   }
 }
 
+const mapDispatchToProps = (dispatch) => ({
+  emailId: (acessoEmail) => dispatch(emailAdd(acessoEmail)),
+});
+
 Login.propTypes = {
   emailId: PropTypes.func.isRequired,
-  history: PropTypes.objectOf(PropTypes.any).isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 export default connect(null, mapDispatchToProps)(Login);
