@@ -1,30 +1,41 @@
 export const EMAIL_ADD = 'EMAIL_ADD';
-export const ALL_COINS = 'ALL_COINS';
+export const GET_COINS = 'GET_COINS';
+export const EXPENSE_ADD = 'EXPENSE_ADD';
+export const CHANGE_RATES = 'CHANGE_RATES';
+export const EXPENSE_DELET = 'EXPENSE_DELET';
+export const EXPENSE_EDIT = 'EXPENSE_EDIT';
+export const TO_EDIT = 'TO_EDIT';
 
 export const emailAdd = (email) => ({
   type: EMAIL_ADD,
-  payload: email,
+  email,
 });
 
-export const allCoins = (coin, infoAPI) => ({
-  type: ALL_COINS,
-  coin,
-  infoAPI });
+export const getCoins = (currencies) => ({
+  type: GET_COINS,
+  currencies,
+});
 
-export function fetchCurrencies() {
-  return (dispatch) => fetch('https://economia.awesomeapi.com.br/json/all')
-    .then((response) => response.json())
-    .then((responseJson) => {
-      delete responseJson.USDT;
-      const a = Object.keys(responseJson);
-      const infoAPI = responseJson;
-      dispatch(allCoins(a, infoAPI));
-    });
-}
+export const expenseAdd = (expenses) => ({
+  type: EXPENSE_ADD,
+  expenses,
+});
 
-export const EXPENSES_ADD = 'EXPENSES_ADD';
+export const changeRates = (total) => ({
+  type: CHANGE_RATES,
+  total,
+});
 
-export const expensesAdd = (stateForm) => ({
-  type: EXPENSES_ADD,
-  stateForm,
+export const expenseDelet = (obj) => ({
+  type: EXPENSE_DELET,
+  expenseToDelete: obj,
+});
+
+export const expenseEdit = (id) => ({
+  type: EXPENSE_EDIT,
+  idToEdit: id,
+});
+
+export const toEdit = () => ({
+  type: 'TO_EDIT',
 });

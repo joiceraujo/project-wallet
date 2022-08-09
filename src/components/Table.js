@@ -1,53 +1,68 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 class Table extends Component {
   render() {
+    const { expenses, getDeleteExpense, getEditExpense } = this.props;
     return (
-      <>
-        <div>Table</div>
-        <table border="1">
-          <thead>
-            <tr>
-              <th>Descrição</th>
-              <td>{}</td>
-            </tr>
-            <tr>
-              <th>Tag:</th>
-              <td>{}</td>
-            </tr>
-            <tr>
-              <th>Método de pagamento</th>
-              <td>{}</td>
-            </tr>
-            <tr>
-              <th>Valor</th>
-              <td>{}</td>
-            </tr>
-            <tr>
-              <th>Moeda</th>
-              <td>{}</td>
-            </tr>
-            <tr>
-              <th>Câmbio utilizado</th>
-              <td>{}</td>
-            </tr>
-            <tr>
-              <th>Valor convertido</th>
-              <td>{}</td>
-            </tr>
-            <tr>
-              <th>Moeda de conversão</th>
-              <td>{}</td>
-            </tr>
-            <tr>
-              <th>Editar/Excluir</th>
-              <td>{}</td>
-            </tr>
-          </thead>
+      <table>
+        <thead>
+          <tr>
+            <th>Descrição</th>
+            <th>Tag</th>
+            <th>Método de pagamento</th>
+            <th>Valor</th>
+            <th>Moeda</th>
+            <th>Câmbio utilizado</th>
+            <th>Valor convertido</th>
+            <th>Moeda de conversão</th>
+            <th>Editar/Excluir</th>
+          </tr>
+        </thead>
+        <tbody>
+          {expenses.map((obj) => (
+            <tr key={ obj.id }>
+              <td>{obj.description}</td>
+              <td>{obj.tag}</td>
+              <td>{obj.method}</td>
+              <td>{(obj.value * 1).toFixed(2)}</td>
+              <td>{obj.exchangeRates[obj.currency].name}</td>
+              <td>{(obj.exchangeRates[obj.currency].ask * 1).toFixed(2)}</td>
+              <td>{(obj.exchangeRates[obj.currency].ask * obj.value).toFixed(2)}</td>
+              <td>Real</td>
+              <td>
+                <button
+                  data-testid="delete-btn"
+                  type="button"
+                  onClick={ () => getDeleteExpense(obj) }
+                >
+                  Excluir
+                </button>
+                <button
+                  data-testid="edit-btn"
+                  type="button"
+                  onClick={ () => getEditExpense(obj.id) }
+                >
+                  Editar
+                </button>
+              </td>
+            </tr>))}
+        </tbody>
 
-        </table>
-      </>
+      </table>
     );
   }
 }
-export default Table;
+
+const mapStateToProps = (state) => ({
+  expenses: state.wallet.expenses,
+});
+
+Table.propTypes = {
+  expenses: PropTypes.arrayOf(PropTypes.object),
+  expenseEdit: PropTypes.func,
+  expenseDelet: PropTypes.func,
+}.isRequired;
+
+export default connect(mapStateToProps)(Table);
