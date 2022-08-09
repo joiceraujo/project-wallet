@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 class Table extends Component {
   render() {
-    const { expenses, getDeleteExpense, getEditExpense } = this.props;
+    const { expenses, handleDelet, handleEdit } = this.props;
     return (
       <table>
         <thead>
@@ -35,14 +35,14 @@ class Table extends Component {
                 <button
                   data-testid="delete-btn"
                   type="button"
-                  onClick={ () => getDeleteExpense(obj) }
+                  onClick={ () => handleDelet(obj) }
                 >
                   Excluir
                 </button>
                 <button
                   data-testid="edit-btn"
                   type="button"
-                  onClick={ () => getEditExpense(obj.id) }
+                  onClick={ () => handleEdit(obj.id) }
                 >
                   Editar
                 </button>
@@ -61,8 +61,8 @@ const mapStateToProps = (state) => ({
 
 Table.propTypes = {
   expenses: PropTypes.arrayOf(PropTypes.object),
-  expenseEdit: PropTypes.func,
-  expenseDelet: PropTypes.func,
+  handleEdit: PropTypes.func,
+  handleDelet: PropTypes.func,
 }.isRequired;
 
 export default connect(mapStateToProps)(Table);
