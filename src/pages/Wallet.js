@@ -76,7 +76,7 @@ class Wallet extends Component {
     this.setState({ ...objToEdit });
   }
 
-  handleDelete = (obj) => {
+  handleDelet = (obj) => {
     const { expenseDelet } = this.props;
     expenseDelet(obj);
     this.calculateTotal();
@@ -101,7 +101,7 @@ class Wallet extends Component {
           clickEdit={ this.clickEdit }
         />
         <Table
-          handleDelete={ this.handleDelete }
+          handleDelet={ this.handleDelet }
           handleEdit={ this.handleEdit }
         />
       </>
