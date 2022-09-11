@@ -5,7 +5,7 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do pro
 
 
 <details>
-  <summary><strong>👨‍💻 O que deverá ser desenvolvido</strong></summary><br />
+  <summary><strong>👩🏼‍💻 O que deverá ser desenvolvido</strong></summary><br />
 
   Neste projeto você vai desenvolver uma carteira de controle de gastos com conversor de moedas, ao utilizar essa aplicação um usuário deverá ser capaz de:
 
